@@ -19,6 +19,11 @@ export default class Document extends NextDocument {
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
+          {/* eslint-disable-next-line @next/next/no-css-tags */}
+          <link
+            rel="stylesheet"
+            href="/fonts/fonts.css"
+          />
         </Head>
         <body>
           <Main />
