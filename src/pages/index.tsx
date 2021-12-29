@@ -8,10 +8,10 @@ import Cursor from '@/components/Cursor'
 const Home: NextPage = () => {
   const ref = useRef<HTMLElement>(null)
   const getIsInverted = (mouse: MousePosition) => {
-    if (!ref.current) return false
+    if (!ref.current || mouse.x === null) return false
     const rect = ref.current.getBoundingClientRect()
     const midpoint = (rect.left + rect.right) / 2
-    return (mouse.x ?? 0) > midpoint
+    return mouse.x > midpoint
   }
 
   return (
