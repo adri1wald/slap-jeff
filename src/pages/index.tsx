@@ -28,9 +28,8 @@ const Home: NextPage = () => {
           <Image
             src='/jeff.png'
             alt='jeff'
-            width={1093}
-            height={873}
-            layout='fixed'
+            layout='fill'
+            objectFit='contain'
           />
         </Box>
       </Cursor>
