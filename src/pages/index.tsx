@@ -18,28 +18,34 @@ const Home: NextPage = () => {
     <Box sx={{ width: '100%', height: '100vh' }}>
       <Cursor
         renderCursor={(mouse) => (
-          !getIsInverted(mouse) ? (
-            <Image
-              src='/slap.png'
-              alt='slap hand'
-              width={194}
-              height={316}
-              layout='fixed'
-            />
-          ) : (
-            <Image
-              src='/slap-inverted.png'
-              alt='slap hand'
-              width={194}
-              height={316}
-              layout='fixed'
-            />
-          )
+          <Box
+            sx={{
+              position: 'relative',
+              width: { xs: 97, sm: 126, md: 194, lg: 252 },
+              height: { xs: 158, sm: 205, md: 316, lg: 411 }
+            }}>
+            {!getIsInverted(mouse) ? (
+              <Image
+                src='/slap.png'
+                alt='slap hand'
+                layout='fill'
+                objectFit='contain'
+              />
+            ) : (
+              <Image
+                src='/slap-inverted.png'
+                alt='slap hand'
+                layout='fill'
+                objectFit='contain'
+              />
+            )}
+          </Box>
         )}
       >
         <Box
           ref={ref}
           sx={{
+            position: 'relative',
             width: '100%',
             height: '100%',
             display: 'flex',
@@ -51,6 +57,7 @@ const Home: NextPage = () => {
             alt='jeff'
             layout='fill'
             objectFit='contain'
+            priority
           />
         </Box>
       </Cursor>
